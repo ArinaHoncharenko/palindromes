@@ -7,10 +7,10 @@ namespace oop3_palindrome
     {
         public static bool IsPalindrome(string input)
         {
-            // Видаляємо символи розділення і змінюємо регістр на нижній
-            string cleanInput = input.Replace(" ", "").ToLower();
+            // Р’РёРґР°Р»СЏС”РјРѕ СЃРёРјРІРѕР»Рё СЂРѕР·РґС–Р»РµРЅРЅСЏ С– Р·РјС–РЅСЋС”РјРѕ СЂРµРіС–СЃС‚СЂ РЅР° РЅРёР¶РЅС–Р№
+            string cleanInput = input.ToLower().Replace(" ", "").Replace("-", "");
 
-            // Перевіряємо, чи містить слово цифри
+            // РџРµСЂРµРІС–СЂСЏС”РјРѕ, С‡Рё РјС–СЃС‚РёС‚СЊ СЃР»РѕРІРѕ С†РёС„СЂРё
             if (cleanInput.Any(char.IsDigit))
             {
                 Console.WriteLine(input + " contains numbers.");
@@ -20,7 +20,7 @@ namespace oop3_palindrome
             int left = 0;
             int right = cleanInput.Length - 1;
 
-            // Перевірка на паліндромність
+            // РџРµСЂРµРІС–СЂРєР° РЅР° РїР°Р»С–РЅРґСЂРѕРјРЅС–СЃС‚СЊ
             while (left < right)
             {
                 if (cleanInput[left] != cleanInput[right])
